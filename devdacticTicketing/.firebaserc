@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "team3-booking-system": {
+      "hosting": {
+        "app": [
+          "team3-booking-system"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "team3-booking-system"
+  }
+}

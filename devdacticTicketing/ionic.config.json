@@ -1,0 +1,7 @@
+{
+  "name": "devdacticTicketing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
