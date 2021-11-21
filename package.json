@@ -1,0 +1,17 @@
+{
+  "name": "json_to_firestore",
+  "version": "1.0.0",
+  "description": "This is to upload JSON to Firestore",
+  "main": "uploader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RetroPortal Studio",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/fire": "^7.2.0",
+    "angular": "^1.8.2",
+    "firebase": "^9.5.0",
+    "firebase-admin": "^10.0.0"
+  }
+}
