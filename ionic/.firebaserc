@@ -1,5 +1,12 @@
 {
   "targets": {
+    "dorset-team-3-ticketing": {
+      "hosting": {
+        "app": [
+          "dorset-team-3-ticketing"
+        ]
+      }
+    },
     "team3-booking-system": {
       "hosting": {
         "app": [

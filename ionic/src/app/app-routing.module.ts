@@ -10,11 +10,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'cart-modal',
-    loadChildren: () => import('./cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
-  },
+  }
+    
 ];
 
 @NgModule({

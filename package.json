@@ -13,5 +13,15 @@
     "angular": "^1.8.2",
     "firebase": "^9.5.0",
     "firebase-admin": "^10.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyeeun92/dorset-team-3-ticketing.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Hyeeun92/dorset-team-3-ticketing/issues"
+  },
+  "homepage": "https://github.com/Hyeeun92/dorset-team-3-ticketing#readme"
 }
