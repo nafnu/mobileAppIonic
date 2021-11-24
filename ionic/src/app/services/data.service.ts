@@ -6,11 +6,29 @@ import { Observable } from 'rxjs';
 
 export interface Event{
   description: string,
-  hour: string,
+  //hour: string,
   id?: string,
   image: string,
-  price: number,
+  //price: number,
   title: string
+}
+
+export interface PricesDates{
+  //description: string,
+  hour1: string,
+  hour2: string,
+  id?: string,
+  //image: string,
+  priceA: number,
+  priceCh: number,
+  priceF: number,
+  priceSn: number,
+  priceSt: number,
+  date1: string,
+  date2: string,
+  date3: string,
+  date4: string,
+  //title: string
 }
 
 @Injectable({
@@ -32,5 +50,16 @@ export class DataService {
       return docData(eventDoRef, { idField: 'id'}) as Observable<Event>
     }
 
+    getPricesDates():Observable<Event[]> {
+      const eventRef = collection(this.firestore, 'schedule&price');
+      return collectionData(eventRef, {idField: 'id'}) as Observable<Event[]>
+
+    }
+
+    getPricesDatesById(id): Observable<Event> {
+
+      const eventDoRef = doc(this.firestore, 'schedule&price');
+      return docData(eventDoRef, { idField: 'id'}) as Observable<Event>
+    }
   }
 
