@@ -12,8 +12,8 @@ export interface Event {
   title: string,
   rumimgTime: {date: string }
   hours: []
-  
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -34,4 +34,6 @@ export class DataService {
 
 
 }
+
+
 
