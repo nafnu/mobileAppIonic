@@ -10,7 +10,20 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
+  },
+  {
+    path: 'events-info',
+    loadChildren: () => import('./pages/events-info/events-info.module').then( m => m.EventsInfoPageModule)
+  },
+  {
+    path: 'select-tickets',
+    loadChildren: () => import('./pages/select-tickets/select-tickets.module').then( m => m.SelectTicketsPageModule)
   }
+
     
 ];
 

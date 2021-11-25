@@ -50,16 +50,16 @@ export class DataService {
       return docData(eventDoRef, { idField: 'id'}) as Observable<Event>
     }
 
-    getPricesDates():Observable<Event[]> {
+    getPricesDates():Observable<PricesDates[]> {
       const eventRef = collection(this.firestore, 'schedule&price');
-      return collectionData(eventRef, {idField: 'id'}) as Observable<Event[]>
+      return collectionData(eventRef, {idField: 'id'}) as Observable<PricesDates[]>
 
     }
 
-    getPricesDatesById(id): Observable<Event> {
+    getPricesDatesById(id): Observable<PricesDates> {
 
-      const eventDoRef = doc(this.firestore, 'schedule&price');
-      return docData(eventDoRef, { idField: 'id'}) as Observable<Event>
+      const eventDoRef = doc(this.firestore, 'schedule&price/${id}');
+      return docData(eventDoRef, { idField: 'id'}) as Observable<PricesDates>
     }
   }
 
