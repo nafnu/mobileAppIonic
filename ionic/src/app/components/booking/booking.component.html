@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="boking-page">
+  <ion-card class="booking-card">
+    <div class="detail">
+      Title : {{ title }} <br />
+      Date : {{ date }} <br />
+      Running Time: {{ hour }}
+    </div>
+    <div class="choose-member">
+      <label> Adult</label>
+      <button class="minosAdult" (click)="removeMember('adult')">-</button>
+      <label> {{ adultTicket }} </label>
+      <button class="plusAdult" (click)="chooseMember('adult')">+</button>
+    </div>
+    <div class="choose-member">
+      <label> Children</label>
+      <button class="minosChildren" (click)="removeMember('child')">-</button>
+      <label> {{ childrenTicket }} </label>
+      <button class="plusChildren" (click)="chooseMember('child')">+</button>
+    </div>
+    <div class="choose-member">
+      <label> Family pacage</label>
+
+      <button class="minosFamily" (click)="removeMember('family')">-</button>
+      <label> {{ familyTicket }} </label>
+      <button class="plusFamily" (click)="chooseMember('family')">+</button>
+      <div class="choose-member">
+        <label> Total price : {{ totalPrice }}</label>
+      </div>
+      <div class="checkIn">
+        <button
+          class="checkInButton"
+          (click)="chooseSeat(adultTicket, childrenTicket, familyTicket)">
+          Choose seat
+        </button>
+      </div>
+    </div>
+
+    <div class="seat" id="seat" [hidden]="display">
+      <label class="screen"> -Screen- </label>
+      <div class = "chooseseat" *ngFor="let row of rows" >
+        <button class="seat" *ngFor="let col of cols" (click)="chosenSeat(row + col)" [ngSwitch]="getStatus(row + col)">{{row + col}}</button>
+      </div>
+      <div>
+        <button class="checkout" (click)="checkOut()">Check out</button>
+      </div>
+    </div>
+ </ion-card>
+</ion-content>

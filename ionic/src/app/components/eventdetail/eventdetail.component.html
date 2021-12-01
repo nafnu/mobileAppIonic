@@ -1,20 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Event Deatil
-    </ion-title>
+    <ion-title> Event Deatil </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="home-page">
-
+<ion-content class="eventdetail-page">
   <div *ngIf="event">
     <ion-card id="image-card">
-      <img class="image" src="{{event.image}}" style="align-items: center"/>
-      <div class="title">{{event.title}}</div>
-      <div class="descrption">{{event.descrption}}</div>
+      <img class="image" src="{{ event.image }}" style="align-items: center" />
+      <div class="title">
+        {{ event.title }}
+      </div>
+      <div class="description">
+        {{ event.description }}
+      </div>
+      <div class="price">
+        Adult Price: {{event.price.adult}}
+      </div>
+
     </ion-card>
 
-  </div>
+      <ion-card id="schedule-card">
 
+          <div class="date">
+            <div class="day" >
+              {{ event.runningTimes.date1 }}
+            </div>
+            <div class="hour"> 
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[0]]">
+                {{ event.runningTimes.datehour1[0] }}
+              </button>
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[1]]">
+                {{ event.runningTimes.datehour1[1] }}
+              </button>
+            </div>
+           
+          </div>
+
+          <div class="date">
+            <div class="day">
+              {{ event.runningTimes.date2 }}
+            </div>
+            <div class="hour"> 
+              <button class="hour-button">
+                {{event.runningTimes.datehour2[0]}}
+              </button>
+              <!-- <button class="hour-button">
+                {{event.runningTime.date2hour[1]}}
+              </button> -->
+            </div>
+           
+          </div>
+          
+
+
+      </ion-card>
+</div>
+  
 </ion-content>

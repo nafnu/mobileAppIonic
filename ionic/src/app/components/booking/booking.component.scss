@@ -1,0 +1,42 @@
+.booking-card {
+  line-height: 150%;
+  
+  .detail {
+    color: white;
+    text-align: center;
+  }
+
+  .choose-member {
+    color: white;
+    text-align: center;
+  }
+
+  .seat {
+    color: white;
+    text-align: center;
+    margin: 0.5rem;
+    .chooseseat {
+      margin: 0.5rem;
+      button {
+        margin: 0.1rem;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        font-size: 0.5rem;
+        width: 1.73rem;
+        height: 1.73rem;
+        color: black;
+      }
+      
+      button:active {
+        background-color: aqua
+      }
+      button:focus {
+        background-color: aqua
+      }     
+    }
+    .checkout {
+      margin: 1rem;
+    }
+  }
+}
+

@@ -21,7 +21,7 @@ export class EventdetailComponent implements OnInit {
     this.id = params['id'];
     this.dataService.getEventById(this.id).subscribe(res => {
       this.event = res;
-      console.log(this.event);
+      console.log(this.event.runningTimes.datehour1);
     });
   });
 

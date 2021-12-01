@@ -7,7 +7,9 @@
 </ion-header>
 
 <ion-content class="home-page">
+
     <ion-card id="image-card" *ngFor="let event of events" [routerLink]="['/eventdetail', event.id]" >
+      
       <img class="image" src="{{event.image}}" style="align-items: center"/>
       <div class="title">{{event.title}}</div>
     </ion-card>

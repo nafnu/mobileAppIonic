@@ -5,16 +5,20 @@ import { docData } from 'rxfire/firestore';
 import { Observable, BehaviorSubject} from 'rxjs';
 
 export interface Event {
-  descrption: string,
+  description: string,
   id?: string,
   image: string,
   price: {adult: number, familiar: number, senior: number, student: number},
   title: string,
-  rumimgTime: {date: string }
-  hours: []
+  runningTimes: runningTimes
 }
 
-
+export interface runningTimes {
+  date1: string, datehour1: string[], 
+  date2: string, datehour2: string[],
+  date3: string, datehour3: string[],
+  date4: string, datehour4: string[]
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +38,4 @@ export class DataService {
 
 
 }
-
-
 

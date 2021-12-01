@@ -1,60 +1,53 @@
-#container {
+.eventdetail-page {
+  .image-card {
+    position: relative;
     text-align: center;
-  
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-  
-    color: #8c8c8c;
-  
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin: 0;
+    width: 33%;
   }
-  
-  #container a {
-    text-decoration: none;
+  .image {
+    width: 100%;
+    height: 100%;
   }
-  
-  .home-page {
-    .image-card {
-      position: relative;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin:0;
-      width:33%;
-      
-      
-    }
-    .image{
-      width:100%;
-      height:100%;
-    }
-  
-    .title {
-      top: 70%;
-      font-size: 2.0em;
-      width: 100%;
-      font-weight: bold;
-      color: white;
-      margin:0.5rem;
-    }
 
-    .descrption {
-        font-color: white;
-        margin:0.5rem;
-        
-    }
+  .title {
+    top: 70%;
+    font-size: 2em;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    margin: 0.5rem;
+    font-size:5vw;
   }
+  .description {
+    color: white;
+    text-align: justify;
+    font-size:3vw;
+  }
+  .price {
+    margin-top: 0.5rem;
+    color: white;
+    font-size:3vw;
+  }
+  .schedule-card {
+    border: solid 0.2rem white;
+  }
+  .date {
+    color: white;
+    display: grid;
+    grid-template-columns: 25% 70%;
+    margin-bottom: 0.3rem;
+    font-size:3vw;
+
+    .hour-button {
+      margin-left: 0.5rem;
+      font-size:3vw;
+    }
+    
+  }
+
+  
+}

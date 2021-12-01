@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -19,12 +17,16 @@ import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-confi
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { HomeComponent } from './components/home/home.component';
 import { EventdetailComponent } from './components/eventdetail/eventdetail.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EventdetailComponent
+    EventdetailComponent,
+    BookingComponent,
+    CheckoutComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
@@ -33,7 +35,8 @@ import { EventdetailComponent } from './components/eventdetail/eventdetail.compo
     provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore()),
     provideFunctions(() => getFunctions()), provideMessaging(() => getMessaging()),
     providePerformance(() => getPerformance()), provideRemoteConfig(() => getRemoteConfig()),
-    provideStorage(() => getStorage())],
+    provideStorage(() => getStorage()),
+    ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent],
 })
