@@ -37,6 +37,18 @@
     .checkout {
       margin: 1rem;
     }
+
+    .showSeat {
+      color: white;
+    }
   }
 }
-
+.reservedSeat {
+  color: #ce4844;
+}
+.selectedSeat {
+  color: #5cb85c;
+}
+.freeSeat {
+  color: #fff;
+}

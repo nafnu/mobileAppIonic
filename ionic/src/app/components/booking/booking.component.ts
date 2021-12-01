@@ -39,33 +39,6 @@ export class BookingComponent implements OnInit {
       return 'selected';
     }
   }
-  
-
-  //click handler
-  seatClicked(seatPos: string) {
-    this.index = this.selected.indexOf(seatPos);
-
-    if (this.index !== -1) {
-      // seat already selected, remove
-      this.selected.splice(this.index, 1);
-    } else {
-      //push to selected array only if it is not reserved
-      if (this.reserved.indexOf(seatPos) === -1) {
-        this.selected.push(seatPos);
-      }
-
-    }
-  }
-
-  //Buy button handler
-  showSelected() {
-    if (this.selected.length > 0) {
-      alert('Selected Seats:  ' + this.selected);
-    } else {
-      alert('No seats selected!');
-    }
-  }
-
 
   chooseMember(item: string) {
     if (item === 'family') {
@@ -91,11 +64,7 @@ export class BookingComponent implements OnInit {
       console.log(this.title + this.date + this.hour);
 
     });
-
-
-
   }
-
 
   removeMember(item: string) {
     if (item === 'family') {
@@ -134,6 +103,8 @@ export class BookingComponent implements OnInit {
     }
   }
 
+  
+
   chosenSeat(item: string) {
 
     if (this.familyTicket === 1) {
@@ -149,12 +120,20 @@ export class BookingComponent implements OnInit {
     }
     console.log(this.selectedSeat);
   }
+
+  
+
   checkOut() {
     if (this.selectedSeat.length === this.totalTicket) {
       this.router.navigateByUrl('/checkout/'+this.title+'/'+this.date+'/'+this.hour+'/'+this.selectedSeat+'/'+this.totalPrice);
     } else {
       alert('Please select all seat');
     }
-
   }
+
+  clearSeat() {
+    this.selectedSeat = [];
+  }
+
+  
 }
