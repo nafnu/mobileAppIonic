@@ -44,8 +44,9 @@
 
     <div class="seat" id="seat" [hidden]="display">
       <label class="screen"> -Screen- </label>
+      
       <div class="chooseseat" *ngFor="let row of rows">
-        <button class="seat" (click)="chosenSeat(row + col)" *ngFor="let col of cols" [ngSwitch]="getStatus(row + col)">
+        <button class="seat" (click)="chosenSeat(row + col)" *ngFor="let col of cols" [ngSwitch]="getStatus(row + col)" >
           {{ row + col }}
         </button>
 

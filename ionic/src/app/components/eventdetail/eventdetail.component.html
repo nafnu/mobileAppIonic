@@ -26,13 +26,14 @@
             <div class="day" >
               {{ event.runningTimes.date1 }}
             </div>
-            <div class="hour"> 
+            <div class="hour" > 
               <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[0]]">
-                {{ event.runningTimes.datehour1[0] }}
+                {{ event.runningTimes.datehour1[ 0 ] }}
               </button>
               <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[1]]">
                 {{ event.runningTimes.datehour1[1] }}
               </button>
+              
             </div>
            
           </div>
@@ -42,14 +43,48 @@
               {{ event.runningTimes.date2 }}
             </div>
             <div class="hour"> 
-              <button class="hour-button">
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[0]]">
                 {{event.runningTimes.datehour2[0]}}
               </button>
-              <!-- <button class="hour-button">
-                {{event.runningTime.date2hour[1]}}
-              </button> -->
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[1]]">
+                {{event.runningTimes.datehour2[1]}}
+              </button>
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[2]]">
+                {{event.runningTimes.datehour2[2]}}
+              </button>
             </div>
-           
+          </div>
+          <div class="date">
+            <div class="day">
+              {{ event.runningTimes.date3 }}
+            </div>
+            <div class="hour"> 
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[0]]">
+                {{event.runningTimes.datehour3[0]}}
+              </button>
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[1]]">
+                {{event.runningTimes.datehour3[1]}}
+              </button>
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[2]]">
+                {{event.runningTimes.datehour3[2]}}
+              </button>
+            </div>
+          </div>
+          <div class="date">
+            <div class="day">
+              {{ event.runningTimes.date4 }}
+            </div>
+            <div class="hour"> 
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[0]]">
+                {{event.runningTimes.datehour4[0]}}
+              </button>
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[1]]">
+                {{event.runningTimes.datehour4[1]}}
+              </button>
+              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[2]]">
+                {{event.runningTimes.datehour4[2]}}
+              </button>
+            </div>
           </div>
           
 

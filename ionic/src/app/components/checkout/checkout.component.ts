@@ -31,14 +31,10 @@ export class CheckoutComponent implements OnInit {
   }
 
   saveData() {
-    // this.getLastname = lastName;
-    // this.getEmail = email;
-    //console.log(this.getFirstname + this.getLastname + this.getEmail);
-    //save in firebase 
     this.getFirstname = document.querySelector<HTMLInputElement>('input[name="userFirstname"]').value;
     this.getLastname = document.querySelector<HTMLInputElement>('input[name="userLirstname"]').value;
     this.getEmail = document.querySelector<HTMLInputElement>('input[name="userEmail"]').value;
-    console.log(this.getFirstname);
+
   }
 
 }

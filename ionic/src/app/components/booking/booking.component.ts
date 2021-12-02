@@ -28,6 +28,7 @@ export class BookingComponent implements OnInit {
   reserved = ['A2', 'A3', 'F5', 'F1', 'F2', 'F6', 'F7', 'F8', 'H1', 'H2', 'H3', 'H4'];
   selected = [];
   index = 0;
+  buttonColor = 'white';
 
   
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
@@ -106,16 +107,17 @@ export class BookingComponent implements OnInit {
   
 
   chosenSeat(item: string) {
-
     if (this.familyTicket === 1) {
       this.totalTicket = 6;
       if (this.selectedSeat.length < this.totalTicket) {
         this.selectedSeat.push(item);
+        this.buttonColor = 'aqua';
       }
     } else if (this.adultTicket > 0) {
       this.totalTicket = this.adultTicket + this.childrenTicket;
       if (this.selectedSeat.length < this.totalTicket) {
         this.selectedSeat.push(item);
+        this.buttonColor = 'aqua';
       }
     }
     console.log(this.selectedSeat);
