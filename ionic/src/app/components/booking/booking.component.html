@@ -13,21 +13,21 @@
     </div>
 
     <div class="choose-member">
-      <label> Adult</label>
+      <label> Adult </label>
       <button class="minosAdult" (click)="removeMember('adult')">-</button>
       <label> {{ adultTicket }} </label>
       <button class="plusAdult" (click)="chooseMember('adult')">+</button>
     </div>
 
     <div class="choose-member">
-      <label> Children</label>
+      <label> Children </label>
       <button class="minosChildren" (click)="removeMember('child')">-</button>
       <label> {{ childrenTicket }} </label>
       <button class="plusChildren" (click)="chooseMember('child')">+</button>
     </div>
 
     <div class="choose-member">
-      <label> Family pacage</label>
+      <label> Family (2Adut,4Children) </label>
       <button class="minosFamily" (click)="removeMember('family')">-</button>
       <label> {{ familyTicket }} </label>
       <button class="plusFamily" (click)="chooseMember('family')">+</button>
@@ -36,7 +36,7 @@
       </div>
 
       <div class="checkIn">
-        <button class="checkInButton" (click)="chooseSeat(adultTicket, childrenTicket, familyTicket)">
+        <button class="checkInButton" (click)="showseat(adultTicket, childrenTicket, familyTicket)">
           Choose seat
         </button>
       </div>

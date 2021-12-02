@@ -28,7 +28,11 @@ export class BookingComponent implements OnInit {
   reserved = ['A2', 'A3', 'F5', 'F1', 'F2', 'F6', 'F7', 'F8', 'H1', 'H2', 'H3', 'H4'];
   selected = [];
   index = 0;
-  buttonColor = 'white';
+
+  firstLetter = null;
+  secondLetter = 0;
+  newSecondLetter = 0;
+  
 
   
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
@@ -63,7 +67,6 @@ export class BookingComponent implements OnInit {
       this.date = params['date'];
       this.hour = params['hour'];
       console.log(this.title + this.date + this.hour);
-
     });
   }
 
@@ -92,7 +95,8 @@ export class BookingComponent implements OnInit {
     }
   }
 
-  chooseSeat(adultPicked: number, childrenPicked: number, familyPicked: number) {
+  showseat(adultPicked: number, childrenPicked: number, familyPicked: number) {
+    this.clearSeat();
     this.adultTicket = adultPicked;
     this.childrenTicket = childrenPicked;
     this.familyTicket = familyPicked;
@@ -104,26 +108,60 @@ export class BookingComponent implements OnInit {
     }
   }
 
-  
-
   chosenSeat(item: string) {
+
     if (this.familyTicket === 1) {
       this.totalTicket = 6;
       if (this.selectedSeat.length < this.totalTicket) {
         this.selectedSeat.push(item);
-        this.buttonColor = 'aqua';
+        this.firstLetter = this.selectedSeat[0].charAt(0);
+        this.secondLetter = +(this.selectedSeat[0].charAt(1) + this.selectedSeat[0].charAt(2));
+
+        if (this.secondLetter === 10) {
+          for (let i = 1; i < this.totalTicket; i++) {
+            this.selectedSeat.push(this.firstLetter + (this.secondLetter - i));
+          }
+        }
+        else if (this.secondLetter !== 10) {
+          for (let i = 1; i < this.totalTicket; i++) {
+            if ( this.secondLetter + i < 11) {
+              this.newSecondLetter = this.secondLetter +i;
+              this.selectedSeat.push(this.firstLetter + (this.newSecondLetter));
+            }
+            else {
+              this.selectedSeat.push(this.firstLetter + (this.newSecondLetter - i));
+            }
+          }
+        }
       }
     } else if (this.adultTicket > 0) {
       this.totalTicket = this.adultTicket + this.childrenTicket;
       if (this.selectedSeat.length < this.totalTicket) {
         this.selectedSeat.push(item);
-        this.buttonColor = 'aqua';
+        this.firstLetter = this.selectedSeat[0].charAt(0);
+        this.secondLetter = +(this.selectedSeat[0].charAt(1) + this.selectedSeat[0].charAt(2));
+        if (this.secondLetter === 10) {
+          for (let i = 1; i < this.totalTicket; i++) {
+            this.selectedSeat.push(this.firstLetter + (this.secondLetter - i));
+          }
+        }
+        else if (this.secondLetter !== 10) {
+          for (let i = 1; i < this.totalTicket; i++) {
+            if ( this.secondLetter + i < 11) {
+              this.newSecondLetter = this.secondLetter +i;
+              this.selectedSeat.push(this.firstLetter + (this.newSecondLetter));
+            }
+            else {
+              this.selectedSeat.push(this.firstLetter + (this.newSecondLetter - i));
+            }
+          }
+        }
+
       }
     }
     console.log(this.selectedSeat);
   }
 
-  
 
   checkOut() {
     if (this.selectedSeat.length === this.totalTicket) {
@@ -137,5 +175,4 @@ export class BookingComponent implements OnInit {
     this.selectedSeat = [];
   }
 
-  
 }
