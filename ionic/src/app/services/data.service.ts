@@ -3,6 +3,7 @@ import { collectionData, Firestore, doc, getFirestore, addDoc, collection, delet
 import { docData } from 'rxfire/firestore';
 import { Observable, BehaviorSubject} from 'rxjs';
 
+
 export interface Event {
   description: string,
   id?: string,
@@ -27,7 +28,8 @@ export interface Event2 {
   Totalprice: string,
   Title: string,
   Date: string,
-  Hour: string
+  Hour: string,
+ SelectedSeat:  string[]
 
  
 }
@@ -75,5 +77,7 @@ export class DataService {
     return updateDoc(eventDocRef, { email:event2.Email, firstname:event2.Firstname });
   }
 
+
+  
 }
 

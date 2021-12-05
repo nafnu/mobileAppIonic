@@ -87,6 +87,7 @@ export class BookingComponent implements OnInit {
     }
     this.calculateTotal();
   }
+  
   calculateTotal() {
     if (this.familyTicket === 1) {
       this.totalPrice = this.familyPrice;
