@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Check Out</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> Booking Summary</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +16,7 @@
       <label>Seat : {{selectedSeat}}</label><br>
       <label>Price : {{totalPrice}}</label>
 
-    </div>
+    <!-- </div>
     <div class = "userInfo">
       <div>
         <label>Frist name </label>
@@ -32,9 +35,17 @@
       </div>
       <div>
         <input type = "text" id = "userEmail" name = "userEmail" />
-      </div>
-      <button id = "checkOut" (click)="saveData()">Check out</button>
+      </div> --> 
+      
     </div>
+    <button id = "checkOut" (click)="addEvents()">
+      <div>
+    
+
+       BOOK NOW
+
+      </div>
+    </button>
   </ion-card>
 
 </ion-content>

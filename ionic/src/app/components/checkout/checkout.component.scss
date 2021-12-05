@@ -8,3 +8,11 @@ label {
         grid-template-columns: 25% 60%
     }
 }
+
+button.checkOut--lg{
+    font-size: var(--btn-lg);
+    width: 100%;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 200% 150%
+}

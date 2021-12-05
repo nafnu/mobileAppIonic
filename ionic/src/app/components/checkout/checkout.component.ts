@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +19,9 @@ export class CheckoutComponent implements OnInit {
   getLastname: string;
   getEmail: string;
 
-  constructor(private route: ActivatedRoute) { }
+
+
+  constructor(private dataService: DataService,private route: ActivatedRoute,  private alertContrl: AlertController) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -30,11 +34,60 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
+
+
   saveData() {
     this.getFirstname = document.querySelector<HTMLInputElement>('input[name="userFirstname"]').value;
     this.getLastname = document.querySelector<HTMLInputElement>('input[name="userLirstname"]').value;
     this.getEmail = document.querySelector<HTMLInputElement>('input[name="userEmail"]').value;
 
+    
   }
 
+  async addEvents() {
+    const alert = await this.alertContrl.create({
+      header: 'Confirm Order',
+      message: 'I agree to the Terms & Conditions',
+      inputs: [
+        {
+          name: 'Firstname',
+          placeholder: 'Name',
+          type: 'text'
+        },
+        {
+          name: 'Lastname',
+          placeholder: 'Lastname',
+          type: 'text'
+        },
+        {
+          name: 'Email',
+          placeholder: 'Email',
+          type: 'text'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Save',
+          handler: (res) => {
+            this.dataService.addEvents({ 
+              Email: res.Email,
+              Firstname: res.Firstname,
+              Lastname: res.Lastname,
+              Totalprice: res.Totalprice,
+              Title: res.Title,
+              Date: res.Date,
+              Hour: res.Hour
+            });
+          }
+        }
+      ]
+
+    });
+    await alert.present();
+
+}
 }
