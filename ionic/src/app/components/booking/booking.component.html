@@ -17,33 +17,42 @@
 
     <div class="choose-member">
       <label> Adult </label>
-      <button class="minosAdult" (click)="removeMember('adult')">-</button>
+      <label> € {{ adultPrice }} </label>
+      <ion-button  shape="round" size="small" color="light" class="minosAdult" (click)="removeMember('adult')">-</ion-button>
       <label> {{ adultTicket }} </label>
-      <button class="plusAdult" (click)="chooseMember('adult')">+</button>
+      <ion-button shape="round" size="small" color="light" class="plusAdult" (click)="chooseMember('adult')">+</ion-button>
     </div>
 
     <div class="choose-member">
       <label> Children </label>
-      <button class="minosChildren" (click)="removeMember('child')">-</button>
+      <label>  € {{ childrenPrice }} </label>
+      <ion-button shape="round" size="small" color="light" class="minosChildren" (click)="removeMember('child')">-</ion-button>
       <label> {{ childrenTicket }} </label>
-      <button class="plusChildren" (click)="chooseMember('child')">+</button>
+      <ion-button shape="round" size="small" color="light" class="plusChildren" (click)="chooseMember('child')">+</ion-button>
     </div>
 
     <div class="choose-member">
-      <label> Family (2Adut,4Children) </label>
-      <button class="minosFamily" (click)="removeMember('family')">-</button>
-      <label> {{ familyTicket }} </label>
-      <button class="plusFamily" (click)="chooseMember('family')">+</button>
+      <label> Family x4 * </label>
+      <label> € {{ familyPrice }} </label>
+      <ion-button shape="round" size="small" color="light" class="minosFamily" (click)="removeMember('family')">-</ion-button>
+      <ion-label> {{ familyTicket }} </ion-label>
+      <ion-button shape="round" size="small" color="light" class="plusFamily" (click)="chooseMember('family')">+</ion-button>
       
-      <div class="choose-member">
-        <label> Total price : {{ totalPrice }}</label>
+      <div class="choose-member1">
+        <ion-label stacked class="my-label"> Total price : {{ totalPrice }}</ion-label>
       </div>
 
       <div class="checkIn">
-        <button class="checkInButton" (click)="showseat(adultTicket, childrenTicket, familyTicket)">
-          Select seat
-        </button>
+        <ion-button  color="danger" block class="checkInButton" (click)="showseat(adultTicket, childrenTicket, familyTicket)">
+          Select Seat(s)
+        </ion-button>
       </div>
+    </div>
+
+    <div class="detail2">
+      <label> Children must be in company wiht an adult </label><br>
+      <label> Family x4 * ( 2 Adult, 2 Child) </label><br>
+      <label> First select the number of tickets before trying to choose the seat </label>
     </div>
 
     <div class="seat" id="seat" [hidden]="display">
@@ -61,8 +70,8 @@
         <label *ngFor="let seat of selectedSeat">{{seat}} </label>
       </div>
       <div class="checkout">
-        <button class="clear" (click)="clearSeat()"> Delete </button>
-        <button class="checkout" (click)="checkOut()">Check out</button>
+        <ion-button color="medium" class="clear" (click)="clearSeat()"> Delete </ion-button>
+        <ion-button color="danger" class="checkout" (click)="checkOut()">Check out</ion-button>
       </div>
     </div>
   </ion-card>

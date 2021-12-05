@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> Select Seats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="seats-page">
+  <ion-card class="seats-card">
+
+    <div class="info">
+      <label> Available </label>
+      <label> Reserved </label>
+      <label> Selected </label>
+    </div>
+
+    
+    <div class="seat" id="seat" [hidden]="display">
+      <label class="screen"> -Screen- </label>
+
+      <div class="chooseseat" *ngFor="let row of rows">
+        <button class="seat" (click)="chosenSeat(row + col)" *ngFor="let col of cols" [ngSwitch]="getStatus(row + col)">
+          {{ row + col }}
+        </button>
+
+      </div>
+
+      <div>
+        <label>Selected seat : </label>
+        <label *ngFor="let seat of selectedSeat">{{seat}} </label>
+      </div>
+      <div class="checkout">
+        <ion-button color="medium" class="clear" (click)="clearSeat()"> Delete </ion-button>
+        <ion-button color="danger" class="checkout" (click)="checkOut()">Check out</ion-button>
+      </div>
+    </div>
+
+  </ion-card>
+
+</ion-content>
