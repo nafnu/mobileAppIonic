@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title> Booking</ion-title>
+    <ion-title> Select Tickets</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -34,13 +34,14 @@
       <button class="minosFamily" (click)="removeMember('family')">-</button>
       <label> {{ familyTicket }} </label>
       <button class="plusFamily" (click)="chooseMember('family')">+</button>
+      
       <div class="choose-member">
         <label> Total price : {{ totalPrice }}</label>
       </div>
 
       <div class="checkIn">
         <button class="checkInButton" (click)="showseat(adultTicket, childrenTicket, familyTicket)">
-          Choose seat
+          Select seat
         </button>
       </div>
     </div>

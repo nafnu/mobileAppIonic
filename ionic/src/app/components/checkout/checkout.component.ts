@@ -39,35 +39,19 @@ export class CheckoutComponent implements OnInit {
 
 
 
-  saveData() {
-    this.getFirstname = document.querySelector<HTMLInputElement>('input[name="userFirstname"]').value;
-    this.getLastname = document.querySelector<HTMLInputElement>('input[name="userLirstname"]').value;
-    this.getEmail = document.querySelector<HTMLInputElement>('input[name="userEmail"]').value;
+  // saveData() {
+  //   this.getFirstname = document.querySelector<HTMLInputElement>('input[name="userFirstname"]').value;
+  //   this.getLastname = document.querySelector<HTMLInputElement>('input[name="userLirstname"]').value;
+  //   this.getEmail = document.querySelector<HTMLInputElement>('input[name="userEmail"]').value;
 
 
-  }
+  // }
 
   async addEvents() {
     const alert = await this.alertContrl.create({
       header: 'Confirm Order',
       message: 'I agree to the Terms & Conditions',
-      // inputs: [
-      //   {
-      //     name: 'Firstname',
-      //     placeholder: 'Name',
-      //     type: 'text'
-      //   },
-      //   {
-      //     name: 'Lastname',
-      //     placeholder: 'Lastname',
-      //     type: 'text'
-      //   },
-      //   {
-      //     name: 'Email',
-      //     placeholder: 'Email',
-      //     type: 'text'
-      //   }
-      // ],
+      
       buttons: [
         {
           text: 'Cancel',
