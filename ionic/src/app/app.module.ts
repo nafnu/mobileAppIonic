@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { EventdetailComponent } from './components/eventdetail/eventdetail.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { SeatsComponent} from './components/seats/seats.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     HomeComponent,
     EventdetailComponent,
     BookingComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SeatsComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,

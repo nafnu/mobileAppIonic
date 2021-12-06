@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { DataService } from 'src/app/services/data.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-checkout',
@@ -21,9 +22,6 @@ export class CheckoutComponent implements OnInit {
   getLastname: string;
   getEmail: string;
 
-
-
-
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router, private alertContrl: AlertController) { }
 
   ngOnInit() {
@@ -37,15 +35,6 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-
-
-  // saveData() {
-  //   this.getFirstname = document.querySelector<HTMLInputElement>('input[name="userFirstname"]').value;
-  //   this.getLastname = document.querySelector<HTMLInputElement>('input[name="userLirstname"]').value;
-  //   this.getEmail = document.querySelector<HTMLInputElement>('input[name="userEmail"]').value;
-
-
-  // }
 
   async addEvents() {
     const alert = await this.alertContrl.create({
@@ -65,11 +54,12 @@ export class CheckoutComponent implements OnInit {
               Email: this.getEmail = (document.querySelector<HTMLInputElement>('input[name="userEmail"]').value),
               Lastname: this.getEmail = (document.querySelector<HTMLInputElement>('input[name="userEmail"]').value),
               Totalprice: this.totalPrice,
-              Title: this.title,  ///has a error
+              Title: this.title,  
               Date: this.date,
               Hour: this.hour,
               SelectedSeat: this.selectedSeat
             });
+            // this.router.navigate(['home'], { relativeTo: this.route }); Error to return home
           }
         }
       ]

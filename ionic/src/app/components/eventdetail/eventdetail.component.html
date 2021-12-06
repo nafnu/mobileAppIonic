@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title> Event Detail </ion-title>
+    <ion-title>Event Detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -30,12 +30,12 @@
               {{ event.runningTimes.date1 }}
             </div>
             <div class="hour" > 
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[0]]">
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[0]]">
                 {{ event.runningTimes.datehour1[ 0 ] }}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[1]]">
+              </ion-button>
+              <ion-button color="medium" size="small"class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date1, event.runningTimes.datehour1[1]]">
                 {{ event.runningTimes.datehour1[1] }}
-              </button>
+              </ion-button>
               
             </div>
            
@@ -46,15 +46,15 @@
               {{ event.runningTimes.date2 }}
             </div>
             <div class="hour"> 
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[0]]">
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[0]]">
                 {{event.runningTimes.datehour2[0]}}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[1]]">
+              </ion-button>
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[1]]">
                 {{event.runningTimes.datehour2[1]}}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[2]]">
+              </ion-button>
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date2, event.runningTimes.datehour2[2]]">
                 {{event.runningTimes.datehour2[2]}}
-              </button>
+              </ion-button>
             </div>
           </div>
           <div class="date">
@@ -62,15 +62,15 @@
               {{ event.runningTimes.date3 }}
             </div>
             <div class="hour"> 
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[0]]">
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[0]]">
                 {{event.runningTimes.datehour3[0]}}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[1]]">
+              </ion-button>
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[1]]">
                 {{event.runningTimes.datehour3[1]}}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[2]]">
+              </ion-button>
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date3, event.runningTimes.datehour3[2]]">
                 {{event.runningTimes.datehour3[2]}}
-              </button>
+              </ion-button>
             </div>
           </div>
           <div class="date">
@@ -78,15 +78,15 @@
               {{ event.runningTimes.date4 }}
             </div>
             <div class="hour"> 
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[0]]">
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[0]]">
                 {{event.runningTimes.datehour4[0]}}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[1]]">
+              </ion-button>
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[1]]">
                 {{event.runningTimes.datehour4[1]}}
-              </button>
-              <button class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[2]]">
+              </ion-button>
+              <ion-button color="medium" size="small" class="hour-button" [routerLink]="['/booking', event.title, event.runningTimes.date4, event.runningTimes.datehour4[2]]">
                 {{event.runningTimes.datehour4[2]}}
-              </button>
+              </ion-button>
             </div>
           </div>
           

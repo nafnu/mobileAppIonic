@@ -18,14 +18,15 @@
     font-size: 2em;
     width: 100%;
     font-weight: bold;
-    color: white;
+    color: rgb(0, 102, 255);
     margin: 0.5rem;
     font-size:5vw;
   }
   .description {
     color: white;
     text-align: justify;
-    font-size:3vw;
+    font-size:4vw;
+    padding: 5fr;
   }
   .price {
     margin-top: 0.5rem;
@@ -39,9 +40,13 @@
     color: white;
     display: grid;
     grid-template-columns: 25% 70%;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.7rem;
     font-size:3vw;
 
+    .day{
+      font-size:4vw;
+      color:rgb(0, 102, 255);
+    }
     .hour-button {
       margin-left: 0.5rem;
       font-size:3vw;

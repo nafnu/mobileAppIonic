@@ -23,40 +23,5 @@ export class HomeComponent {
         this.events2 = res;
       })
     }
-  
-  // async addEvents() {
-  //   const alert = await this.alertContrl.create({
-  //     header: 'Confirm Order',
-  //     inputs: [
-  //       {
-  //         name: 'Email',
-  //         placeholder: 'Email',
-  //         type: 'text'
-  //       },
-  //       {
-  //         name: 'Firstname',
-  //         placeholder: 'Name',
-  //         type: 'text'
-  //       }
-  //     ],
-  //     buttons: [
-  //       {
-  //         text: 'Cancel',
-  //         role: 'cancel'
-  //       },
-  //       {
-  //         text: 'Save',
-  //         handler: (res) => {
-  //           this.dataService.addEvents({ 
-  //             Email: res.Email, 
-  //             Firstname: res.Firstname });
-  //         }
-  //       }
-  //     ]
 
-  //   });
-  //   await alert.present();
-
-
-  // }
 }
